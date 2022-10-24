@@ -10,6 +10,10 @@ pub fn main() -> Result<(), JsValue> {
     let body = document.body().expect("document should have a body");
 
     // Manufacture the element we're gonna append
+    let style = document.create_element("style")?;
+    style.set_inner_html("body { background: #222233; color: #dddddd }");
+    body.append_child(&style)?;
+
     let val = document.create_element("p")?;
     val.set_inner_html("Hello from Rust!");
 
@@ -21,4 +25,10 @@ pub fn main() -> Result<(), JsValue> {
 #[wasm_bindgen]
 pub fn add(a: u32, b: u32) -> u32 {
     a + b
+}
+
+#[wasm_bindgen]
+pub fn greet(m: String) {
+    let message = "Hello, ".to_owned() + &m;
+    web_sys::console::log_1(&JsValue::from_str(&message));
 }
