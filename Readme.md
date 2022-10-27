@@ -1,4 +1,4 @@
-# Rust WASM hello-world
+# Rust WASM + WebGL hello-world
 
 # Setup
 
@@ -16,4 +16,7 @@ python3 -m http.server
 
 # Source
 
-All the code comes from: https://github.com/rustwasm/wasm-bindgen/tree/main/examples/without-a-bundler
+This is a mix of 2 examples from wasm-bindgen:
+
+1. https://github.com/rustwasm/wasm-bindgen/tree/main/examples/without-a-bundler
+2. https://github.com/rustwasm/wasm-bindgen/tree/main/examples/webgl
