@@ -1,5 +1,5 @@
 [package]
-name = "hello_world"
+name = "webgl"
 version = "0.1.0"
 authors = ["The wasm-bindgen Developers"]
 edition = "2018"
@@ -8,14 +8,19 @@ edition = "2018"
 crate-type = ["cdylib"]
 
 [dependencies]
+js-sys = "0.3.60"
 wasm-bindgen = "0.2.83"
+
 [dependencies.web-sys]
 version = "0.3.4"
 features = [
   'Document',
   'Element',
-  'HtmlElement',
-  'Node',
+  'HtmlCanvasElement',
+  'WebGlBuffer',
+  'WebGlVertexArrayObject',
+  'WebGl2RenderingContext',
+  'WebGlProgram',
+  'WebGlShader',
   'Window',
-  'console'
 ]
